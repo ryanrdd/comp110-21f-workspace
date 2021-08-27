@@ -8,7 +8,7 @@ n2: str = (input("Right-hand side: "))
 intn1: int = int(n1)
 intn2: int = int(n2)
 
-lessint: bool = (intn1<intn2)
+lessint: bool = (intn1 < intn2)
 greateqint: bool = (intn1 >= intn2)
 eqint: bool = (intn1 == intn2)
 noteqint: bool = (intn1 != intn2)
