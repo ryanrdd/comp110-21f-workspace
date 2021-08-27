@@ -2,18 +2,18 @@
 
 __author__ = "730314539"
 
-n1: str = (input("Left-hand side: "))
-n2: str = (input("Right-hand side: "))
+input1: str = (input("Left-hand side: "))
+input2: str = (input("Right-hand side: "))
 
-intn1: int = int(n1)
-intn2: int = int(n2)
+int1: int = int(input1)
+int2: int = int(input2)
 
-squareint: int = (intn1**intn2)
-devint: float = (intn1 / intn2)
-inteint: int = (intn1 // intn2)
-remaint: int = (intn1 % intn2)
+square_int: int = (int1**int2)
+divide_int: float = (int1 / int2)
+integer_int: int = (int1 // int2)
+modulo_int: int = (int1 % int2)
 
-print(n1 + " ** " + n2 + " is " + str(squareint))
-print(n1 + " / " + n2 + " is " + str(devint))
-print(n1 + " // " + n2 + " is " + str(inteint))
-print(n1 + " % " + n2 + " is " + str(remaint))
+print(input1 + " ** " + input2 + " is " + str(square_int))
+print(input1 + " / " + input2 + " is " + str(divide_int))
+print(input1 + " // " + input2 + " is " + str(integer_int))
+print(input1 + " % " + input2 + " is " + str(modulo_int))
