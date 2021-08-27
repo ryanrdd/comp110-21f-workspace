@@ -1,4 +1,4 @@
-"""exercises.ex01.relational_operators!"""
+"""exercises.ex01.numeric_operators!"""
 
 __author__ = "730314539"
 
