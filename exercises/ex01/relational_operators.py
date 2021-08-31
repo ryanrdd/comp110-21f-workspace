@@ -2,18 +2,18 @@
 
 __author__ = "730314539"
 
-n1: str = (input("Left-hand side: "))
+number_1: str = (input("Left-hand side: "))
 n2: str = (input("Right-hand side: "))
 
-intn1: int = int(n1)
-intn2: int = int(n2)
+int_1: int = int(number_1)
+int_2: int = int(n2)
 
-lessint: bool = (intn1 < intn2)
-greateqint: bool = (intn1 >= intn2)
-eqint: bool = (intn1 == intn2)
-noteqint: bool = (intn1 != intn2)
+less_int: bool = (int_1 < int_2)
+greater_equal_int: bool = (int_1 >= int_2)
+equal_int: bool = (int_1 == int_2)
+not_equal_int: bool = (int_1 != int_2)
 
-print(n1 + " < " + n2 + " is " + str(lessint))
-print(n1 + " >= " + n2 + " is " + str(greateqint))
-print(n1 + " == " + n2 + " is " + str(eqint))
-print(n1 + " != " + n2 + " is " + str(noteqint))
+print(number_1 + " < " + n2 + " is " + str(less_int))
+print(number_1 + " >= " + n2 + " is " + str(greater_equal_int))
+print(number_1 + " == " + n2 + " is " + str(equal_int))
+print(number_1 + " != " + n2 + " is " + str(not_equal_int))
