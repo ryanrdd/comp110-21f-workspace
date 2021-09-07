@@ -9,8 +9,7 @@ count: int = 0
 
 while i < len(word):
     if word[i] == letter:
-        if count == 0:
-            count = i + 1
+        count = count + 1
     i = i + 1
 
 print("Count: " + str(count))
