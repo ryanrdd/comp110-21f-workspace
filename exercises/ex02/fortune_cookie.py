@@ -4,7 +4,7 @@ __author__ = "730314539"
 
 from random import randint
 
-fortune: int = int(randint(1,4))
+fortune: int = int(randint(1, 4))
 
 print("Your fortune cookie says...")
 if fortune == 1:
