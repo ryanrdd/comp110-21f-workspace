@@ -1,6 +1,13 @@
 """An example, simple program"""
 
-print("hello,world")
-quiz: int = 100
-print(quiz)
-print("Goodbye.")
+i: int = 0
+s: str = ""
+
+while i < 10:
+    if i % 2 == 0:
+        s = s + "h"
+    else:
+        s = s + "e"
+    i = i + 1
+
+print(s)
