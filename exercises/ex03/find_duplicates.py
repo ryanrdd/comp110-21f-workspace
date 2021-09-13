@@ -16,6 +16,7 @@ while i < len(word):
             if word[i] == word[j]:
                 count = True
         j = j + 1
+    j = 0
     i = i + 1
 
 print("Found duplicate: " + str(count))
