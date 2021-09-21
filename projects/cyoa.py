@@ -8,6 +8,7 @@ game_name: str = ""
 player: str = ""
 points: int = 10
 opp_team: int = 0
+WIN: str = '\U0001F389'
 
 """Game Mechanics Percentages"""
 run = int(100)
@@ -163,6 +164,7 @@ def gs() -> None:
         if points <= 0:
             print("TOUCHDOWN!!! ")
             print("UNC wins! ")
+            print(f"{WIN} {WIN} {WIN}")
             quit()
 
 def main() -> None:
