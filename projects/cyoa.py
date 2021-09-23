@@ -1,4 +1,4 @@
-"""Choose Your Own Adventure: Mack Brown Smackdown"""
+"""Choose Your Own Adventure: Mack Brown Smackdown."""
 
 __author__ = "730314539"
 
@@ -8,9 +8,19 @@ game_name: str = ""
 player: str = ""
 points: int = 10
 opp_team: int = 0
+c: int = 0
 WIN: str = '\U0001F389'
 
-"""Game Mechanics Percentages"""
+
+def sack(x: int) -> int:
+    """Sack the player in the game loop, custom function."""
+    global c
+    if c > 90:
+        x = x + 2
+    return x
+
+
+"""Game Mechanics Percentages."""
 run = int(100)
 short = int(80)
 long = int(60)
@@ -18,7 +28,7 @@ hail = int(30)
 
 
 def greet() -> None:
-    """Introduction to the game"""
+    """Introduction to the game."""
     print("Welcome to Mack Brown Smackdown Football! ")
     print("You are now hired as UNC’s offensive coordinator, calling the plays and leading the Tar Heels to victory! ")
     print("Your objective is to score the winning touchdown without losing possession of the ball. ")
@@ -27,8 +37,9 @@ def greet() -> None:
     player = name
     print(f"Great! Welcome to the team { name }. ")
 
+
 def tutorial() -> None:
-    """instructions to the game"""
+    """Instructions to the game."""
     tutorial_signature: int = 1 
     while tutorial_signature == 1:
         instructions: str = input("Would you like to see the instructions to the game? (yes or no) ")
@@ -40,10 +51,10 @@ def tutorial() -> None:
             tutorial_signature = tutorial_signature - 1
         else:
             print("invalid input ")
-    move_on: str = input("Press enter to continue ")
+
 
 def game_selection() -> None:
-    """Game selection"""
+    """Game selection."""
     game_int: int = 0
     global opp_team
     global game_name
@@ -67,11 +78,11 @@ def game_selection() -> None:
             game_int = game_int + 1
             opp_team = 3
         else:
-            print("invalid input" )
-    move_on: str = input("Press enter to continue ")
+            print("Invalid input")
+
 
 def gs() -> None:
-    """Gameplay time"""
+    """Gameplay time."""
     global opp_team
     global player
     global points
@@ -79,6 +90,7 @@ def gs() -> None:
     global short
     global long
     global hail
+    global c
     opp_name: str = ""
     downs = 0
     if opp_team == 1:
@@ -95,84 +107,88 @@ def gs() -> None:
         short = short - 15
         long = long - 10
         hail = hail - 20
-    print(f"It's show time, time to show what you're made of { player }. ")
-    print(f"We're playing { opp_name }, so play strong. ")
-    print(f"UNC is starting { points } yards away from the endzone! ")
+    print(f"It's show time, time to show what you're made of { player }.")
+    print(f"We're playing { opp_name }, so play strong.")
+    print(f"UNC is starting { points } yards away from the endzone!")
     while points > 0:
         play: str = input("What play do you want to run coach? (run, short, long, hail) ")
-        c: int = randint(0,100)
+        c = randint(0, 100)
         if play == "run":
             if c <= run:
                 points = points - 2
-                print("Caleb hood runs it for 2 yards! ")
+                print("Caleb hood runs it for 2 yards!")
             if c > run:
-                print("The defense got us this time. Run another play. ")
+                print("The defense got us this time. Run another play.")
             if downs < 4:
                 downs = downs + 1
                 if downs == 4:
-                    print("You lose! ")
+                    print("You lose!")
                     quit()
             else:
-                print("You lose! ")
+                print("You lose!")
                 quit()
         elif play == "short":
             if c <= short:
                 points = points - 4
-                print("Sam Howell throws for 4 yards! ")
+                print("Sam Howell throws for 4 yards!")
             if c > short:
-                print("The defense got us this time. Run another play. ")
+                print("The defense got us this time. Run another play.")
             if downs < 4:
                 downs = downs + 1
                 if downs == 4:
-                    print("You lose! ")
+                    print("You lose!")
                     quit()
             else:
-                print("You lose! ")
+                print("You lose!")
                 quit()
         elif play == "long":
             if c <= long:
                 points = points - 6
-                print("Caught by Jeffrey Saturday! ")
+                print("Caught by Jeffrey Saturday!")
             if c > long:
-                print("The defense got us this time. Run another play. ")
+                print("The defense got us this time. Run another play.")
             if downs < 4:
                 downs = downs + 1
                 if downs == 4:
-                    print("You lose! ")
+                    print("You lose!")
                     quit()
             else:
-                print("You lose! ")
+                print("You lose!")
                 quit()
         elif play == "hail":
             if c <= hail:
                 points = points - 10
-                print("SAM HOWELL GOES LONG AND SCORES!!! ")
+                print("SAM HOWELL GOES LONG AND SCORES!!!")
             if c > hail:
-                print("The defense got us this time. Run another play. ")
+                print("The defense got us this time. Run another play.")
             if downs < 4:
                 downs = downs + 1
                 if downs == 4:
-                    print("You lose! ")
+                    print("You lose!")
                     quit()
             else:
-                print("You lose! ")
+                print("You lose!")
                 quit()
         else:
-            print("invalid input ")
+            print("invalid input")
         if points > 0:
-            print(f"We're now { points } yards from the endzone" )
+            print(f"We're now { points } yards from the endzone")
         if points <= 0:
-            print("TOUCHDOWN!!! ")
+            print("TOUCHDOWN!!!")
             print("UNC wins! ")
             print(f"{WIN} {WIN} {WIN}")
             quit()
 
+
 def main() -> None:
     """The program's entrypoint."""
+    global points
     greet()
     tutorial()
     game_selection()
+    points = sack(points)
     gs()
+
 
 if __name__ == "__main__":
     main()
