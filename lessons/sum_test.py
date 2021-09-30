@@ -10,7 +10,7 @@ def test_sum_empty() -> None:
 
 
 def test_sum_single_item() -> None:
-    xs: list[float] = [111.0]
+    xs: list[float] = [110.0]
     assert sum(xs) == 110.0
 
 
