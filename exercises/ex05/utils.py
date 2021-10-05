@@ -32,6 +32,6 @@ def sub(s_list: list[int], start: int, end: int) -> list[int]:
 
 def concat(a_list: list[int], b_list: list[int]) -> list[int]:
     """Returns a new list with a_list and b_list."""
-    n: list[int] = []
-    n = a_list + b_list
-    return n
+    new: list[int] = []
+    new = a_list + b_list
+    return new
