@@ -11,7 +11,7 @@ def invert(a: dict[str, str]) -> dict[str, str]:
             raise KeyError('duplicate keys in output dict')
         result[a[key]] = key
     return result
- 
+
 
 def favorite_color(b: dict[str, str]) -> str:
     """Function that returns the most common color in a list"""
@@ -30,9 +30,12 @@ def favorite_color(b: dict[str, str]) -> str:
     return color
 
 
-def count(d: list[int]) -> dict[str, int]:
+def count(d: list[str]) -> dict[str, int]:
     """From a list, the function produces a count of all items in the list"""
-    built_up: dict[str, int] = {}
+    e: dict[str, int] = {}
     for key in d:
-        if d[key] in d:
-    return built_up
+        if key in e:
+            e[key] += 1
+        else:
+            e[key] = 1
+    return e
