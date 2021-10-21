@@ -8,7 +8,7 @@ def invert(a: dict[str, str]) -> dict[str, str]:
     result: dict[str, str] = {}
     for key in a:
         if a[key] in result:
-            raise KeyError('duplicate keys in output dict')
+            raise KeyError('duplicate keys in output dict.')
         result[a[key]] = key
     return result
 
