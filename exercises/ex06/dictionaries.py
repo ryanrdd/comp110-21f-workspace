@@ -4,7 +4,7 @@ __author__ = "730314539"
 
 
 def invert(a: dict[str, str]) -> dict[str, str]:
-    """Code that inverts the keys and values of the two lists"""
+    """Code that inverts the keys and values of the two lists."""
     result: dict[str, str] = {}
     for key in a:
         if a[key] in result:
@@ -14,7 +14,7 @@ def invert(a: dict[str, str]) -> dict[str, str]:
 
 
 def favorite_color(b: dict[str, str]) -> str:
-    """Function that returns the most common color in a list"""
+    """Function that returns the most common color in a list."""
     c: dict[str, int] = {}
     c_max: int = 0
     color: str = ""
@@ -31,7 +31,7 @@ def favorite_color(b: dict[str, str]) -> str:
 
 
 def count(d: list[str]) -> dict[str, int]:
-    """From a list, the function produces a count of all items in the list"""
+    """From a list, the function produces a count of all items in the list."""
     e: dict[str, int] = {}
     for key in d:
         if key in e:
