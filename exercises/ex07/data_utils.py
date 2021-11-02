@@ -44,9 +44,28 @@ def head(column_table: dict[str, list[str]], N: int) -> dict[str, list[str]]:
     return result
 
 
-def selected(column_table: dict[str, list[str]], column_names: list[str]) -> dict[str, list[str]]:
+def select(column_table: dict[str, list[str]], column_names: list[str]) -> dict[str, list[str]]:
     """Produce a new column-based table with only a specific subset of the original columns."""
     result: dict[str, list[str]] = {}
     for s in column_names:
         result[s] = column_table[s]
+    return result
+
+
+def concat(column_tab_1: dict[str, list[str]], column_tab_2: dict[str, list[str]]) -> dict[str, list[str]]:
+    """Produce a new column-based table with two column-based tables combined."""
+    result: dict[str, list[str]] = column_tab_1
+    for w in column_tab_2:
+        result[w] = column_tab_2[w]
+    return result
+
+
+def count(xs: list[str]) -> dict[str, int]:
+    """This function will produce a `dict[str, int]` where each key is a unique value in the given list and each value associated is the _count_ of the number of times that value appeared in the input list."""
+    result: dict[str, int] = {}
+    for i in xs:
+        if i in result:
+            result[i] = result[i] + 1
+        else:
+            result[i] = 1
     return result
