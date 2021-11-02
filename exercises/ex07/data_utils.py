@@ -4,9 +4,10 @@ __author__ = "730314539"
 
 from csv import DictReader
 
+
 def read_csv_rows(filename: str) -> list[dict[str, str]]:
-    """Read an entire CSV of data into a list of rows, each row represented as dict[str,str]."""
-    result: list[dict[str,str]] = []
+    """Read an entire CSV of data into a list of rows, each row represented as dict[str, str]."""
+    result: list[dict[str, str]] = []
     file_handle = open(filename, "r", encoding="utf8")
     csv_reader = DictReader(file_handle)
     for row in csv_reader:
@@ -15,7 +16,7 @@ def read_csv_rows(filename: str) -> list[dict[str, str]]:
     return result
 
 
-def column_values(table: list[dict[str,str]], column: str) -> list[str]:
+def column_values(table: list[dict[str, str]], column: str) -> list[str]:
     """Produce a list[str] of all values in a single column whose name is in the second paramter."""
     result: list[str] = []
     for row in table:
@@ -39,7 +40,8 @@ def head(column_table: dict[str, list[str]], N: int) -> dict[str, list[str]]:
     for key in column_table:
         first_n: list[str] = []
         for i in range(N):
-            first_n.append(column_table[key][i])
+            if i < len(column_table[key]):
+                first_n.append(column_table[key][i])
         result[key] = first_n
     return result
 
@@ -56,7 +58,10 @@ def concat(column_tab_1: dict[str, list[str]], column_tab_2: dict[str, list[str]
     """Produce a new column-based table with two column-based tables combined."""
     result: dict[str, list[str]] = column_tab_1
     for w in column_tab_2:
-        result[w] = column_tab_2[w]
+        if w in result:
+            result[w] = column_tab_1[w] + column_tab_2[w]
+        else:
+            result[w] = column_tab_2[w]
     return result
 
 
