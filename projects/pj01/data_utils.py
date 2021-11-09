@@ -76,7 +76,8 @@ def count(xs: list[str]) -> dict[str, int]:
     return result
 
 
-def helper_function(data: dict[str, int]) -> int:
+def helper_function(data: list[str]) -> int:
     """This helper function will produce the number of students who did not participate in the question."""
-    result = 0
-    count:
+    result: int = 0
+    result = count(data)['']
+    return result
